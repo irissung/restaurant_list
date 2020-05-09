@@ -36,4 +36,4 @@
 - Express-Handlebars: v4.0.4
 
 ### 專案畫面
-https://github.com/irissung/restaurant_list/blob/master/restaurant.JPG
+![image](https://github.com/irissung/restaurant_list/blob/master/restaurant.JPG)
