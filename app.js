@@ -33,6 +33,18 @@ app.get('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+//CRUD - CREAT
+app.get('/restaurants/new', (req, res) => {
+  res.render('new')
+})
+
+app.post('/restaurants', (req, res) => {
+  const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
+  return Restaurant.create({ name, name_en, category, image, location, phone, google_map, rating, description })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
@@ -53,6 +65,8 @@ app.get('/search', (req, res) => {
     res.render('nothing')
   }
 })
+
+
 app.listen(port, () => {
   console.log(`Express is listening on localhost :${port}`)
 })
