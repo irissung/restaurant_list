@@ -2,8 +2,8 @@
   <a href="/restaurants/{{restaurant._id}}/edit">
     <i class="fas fa-edit"></i>
   </a>
-  <form action="./restaurants/{{ restaurant._id }}/delete" method="POST" style="display: inline;">
-    <button class="delete" type="submit" style="background-color: transparent;"><i
+  <form action="/restaurants/{{ restaurant._id }}/delete" method="POST" style="display: inline;">
+    <button class="delete" type="submit" style="background-color: transparent;" onclick="return checkDelete()"><i
         class="fas fa-trash-alt"></i></button>
   </form>
 </h1>
@@ -47,3 +47,8 @@
     </div>
   </div>
 </div>
+<script>
+  function checkDelete() {
+    alert("確定要刪掉這筆餐廳資料嗎?")
+  }
+</script>

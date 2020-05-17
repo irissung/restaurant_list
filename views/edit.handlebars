@@ -1,5 +1,5 @@
 <h1 class="mb-1 restaurant-show-title">編輯餐廳</h1>
-<form action="/restaurants/{{ restaurant._id }}/edit" method="POST" class="create">
+<form action="/restaurants/{{ restaurant._id }}/edit" method="POST" class="create" name="create" onclick="check()">
   <div class="home">
     <a href="/">
       <i class="fas fa-home" style="font-size: 50px;"></i>
@@ -14,13 +14,13 @@
       <span class="input-group-text">Restaurant Name</span>
       <input type="text" class="form-control" value="{{ restaurant.name_en}}" name="name_en">
     </div>
-    <div class="input-group-prepend create-restaurant">
+    <div class=" input-group-prepend create-restaurant">
       <span class="input-group-text">餐廳類別</span>
       <input type="text" class="form-control" value="{{ restaurant.category}}" name="category">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">圖片</span>
-      <input type="text" class="form-control" value="{{ restaurant.image }}" name="image">
+      <input type="url" class="form-control" value="{{ restaurant.image }}" name="image">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">地址</span>
@@ -28,15 +28,16 @@
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">電話</span>
-      <input type="text" class="form-control" value="{{ restaurant.phone }}" name="phone">
+      <input type="tel" class="form-control" value="{{ restaurant.phone }}" name="phone">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">Google Map</span>
-      <input type="text" class="form-control" value="{{ restaurant.google_map }}" name="google_map">
+      <input type="url" class="form-control" value="{{ restaurant.google_map }}" name="google_map">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">評價</span>
-      <input type="text" class="form-control" value="{{ restaurant.rating }}" name="rating">
+      <input type="number" class="form-control" value="{{ restaurant.rating }}" name="rating" step="0.1" min="1"
+        max="5">
     </div>
     <div class="input-group-prepend create-restaurant" style="height: 150px;">
       <span class="input-group-text">餐廳簡介</span>
@@ -45,3 +46,16 @@
   </div>
   <button type=" submit" class="create-restaurant">儲存</button>
 </form>
+<script>
+  function check() {
+    const re = /\s|[　]/g;  //[]裡面是一個全型空白
+    if (document.create.name.value === "" || document.create.name_en.value === "" || document.create.description.value === "" || document.create.location.value === "") {
+      alert("未輸入");
+      return false;
+    }
+    if (re.test(document.create.name.value) || re.test(document.create.description.value) || re.test(document.create.location.value)) {
+      alert("不能含有全型及半型的空白");
+      return false;
+    }
+  }
+</script>

@@ -1,5 +1,5 @@
 <h1 class="mb-1 restaurant-show-title">新增餐廳</h1>
-<form action="/restaurants" method="POST" class="create">
+<form action="/restaurants" method="POST" class="create" name="create">
   <div class="input-group create-box">
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">餐廳名稱</span>
@@ -9,13 +9,13 @@
       <span class="input-group-text">Restaurant Name</span>
       <input type="text" class="form-control" placeholder="Please enter the english name of restaurant" name="name_en">
     </div>
-    <div class="input-group-prepend create-restaurant">
+    <div class=" input-group-prepend create-restaurant">
       <span class="input-group-text">餐廳類別</span>
       <input type="text" class="form-control" placeholder="EX: 日本料理、義式餐廳" name="category">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">圖片</span>
-      <input type="text" class="form-control" placeholder="請輸入圖片位址" name="image">
+      <input type="url" class="form-control" placeholder="請輸入圖片位址" name="image">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">地址</span>
@@ -23,20 +23,33 @@
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">電話</span>
-      <input type="text" class="form-control" placeholder="請輸入訂位電話" name="phone">
+      <input type="tel" class="form-control" placeholder="請輸入訂位電話" name="phone">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">Google Map</span>
-      <input type="text" class="form-control" placeholder="請輸入google map的網址" name="google_map">
+      <input type="url" class="form-control" placeholder="請輸入google map的網址" name="google_map">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">評價</span>
-      <input type="text" class="form-control" placeholder="請輸入1~5分的評價分數，" name="rating">
+      <input type="number" class="form-control" placeholder="請輸入1~5分的評價分數，" name="rating" step="0.1" min="0" max="5">
     </div>
     <div class="input-group-prepend create-restaurant" style="height: 150px;">
       <span class="input-group-text">餐廳簡介</span>
       <textarea class="form-control" name="description" placeholder="請輸入餐廳介紹" style="height: 150px"></textarea>
     </div>
   </div>
-  <button type=" submit" class="create-restaurant">建立餐廳</button>
+  <button type=" submit" class="create-restaurant" onclick="check()">建立餐廳</button>
 </form>
+<script>
+  function check() {
+    const re = /\s|[　]/g;  //[]裡面是一個全型空白
+    if (document.create.name.value === "" || document.create.name_en.value === "" || document.create.description.value === "" || document.create.location.value === "") {
+      alert("未輸入");
+      return false;
+    }
+    if (re.test(document.create.name.value) || re.test(document.create.description.value) || re.test(document.create.location.value)) {
+      alert("不能含有全型及半型的空白");
+      return false;
+    }
+  }
+</script>
