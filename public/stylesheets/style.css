@@ -51,11 +51,14 @@ header {
 }
 
 .card {
+  width: 30%;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  height: 300px;
 }
 
 .card img{
-  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
 }
 
 .card-title{
@@ -80,6 +83,11 @@ header {
   -webkit-text-stroke: 2px whitesmoke;
 }
 
+.restaurant-show {
+  width:100%;
+  margin: auto;
+}
+
 .create {
   width: 50%;
   margin: 2px auto;
@@ -93,6 +101,12 @@ header {
   width: 100%;
   margin-top: 2px;
   text-align: center;
+}
+
+.restaurant-compile {
+  font-size: large;
+  position:absolute;
+  right:10px;
 }
 
 @media screen and (max-width: 992px) {

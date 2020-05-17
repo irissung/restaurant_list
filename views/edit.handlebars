@@ -1,42 +1,42 @@
-<h1 class="mb-1 restaurant-show-title">新增餐廳</h1>
+<h1 class="mb-1 restaurant-show-title">編輯餐廳</h1>
 <form action="/restaurants" method="POST" class="create">
   <div class="input-group create-box">
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">餐廳名稱</span>
-      <input type="text" class="form-control" placeholder="請輸入中文名稱" name="name">
+      <input type="text" class="form-control" value="{{ restaurant.name }}" name="name">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">Restaurant Name</span>
-      <input type="text" class="form-control" placeholder="Please enter the english name of restaurant" name="name_en">
+      <input type="text" class="form-control" value="{{ restaurant.name_en}}" name="name_en">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">餐廳類別</span>
-      <input type="text" class="form-control" placeholder="EX: 日本料理、義式餐廳" name="category">
+      <input type="text" class="form-control" value="{{ restaurant.category}}" name="category">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">圖片</span>
-      <input type="text" class="form-control" placeholder="請輸入圖片位址" name="image">
+      <input type="text" class="form-control" value="{{ restaurant.image }}" name="image">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">地址</span>
-      <input type="text" class="form-control" placeholder="請輸入餐廳地址" name="location">
+      <input type="text" class="form-control" value="{{ restaurant.location }}" name="location">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">電話</span>
-      <input type="text" class="form-control" placeholder="請輸入訂位電話" name="phone">
+      <input type="text" class="form-control" value="{{ restaurant.phone }}" name="phone">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">Google Map</span>
-      <input type="text" class="form-control" placeholder="請輸入google map的網址" name="google_map">
+      <input type="text" class="form-control" value="{{ restaurant.google_map }}" name="google_map">
     </div>
     <div class="input-group-prepend create-restaurant">
       <span class="input-group-text">評價</span>
-      <input type="text" class="form-control" placeholder="請輸入1~5分的評價分數，" name="rating">
+      <input type="text" class="form-control" value="{{ restaurant.rating }}" name="rating">
     </div>
     <div class="input-group-prepend create-restaurant" style="height: 150px;">
       <span class="input-group-text">餐廳簡介</span>
-      <textarea class="form-control" name="description" placeholder="請輸入餐廳介紹" style="height: 150px"></textarea>
+      <textarea class="form-control" name="description" style="height: 150px">{{ restaurant.description}}</textarea>
     </div>
   </div>
-  <button type=" submit" class="create-restaurant">建立餐廳</button>
+  <button type=" submit" class="create-restaurant">儲存</button>
 </form>
