@@ -83,6 +83,9 @@ header {
   -webkit-text-stroke: 2px whitesmoke;
 }
 
+.restaurant-show-title i {
+  font-size: xx-large;
+}
 .restaurant-show {
   width:100%;
   margin: auto;
@@ -112,6 +115,13 @@ header {
   font-size: large;
   position:absolute;
   right:10px;
+}
+
+.delete {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none; 
 }
 
 @media screen and (max-width: 992px) {
