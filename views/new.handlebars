@@ -38,16 +38,16 @@
       <textarea class="form-control" name="description" placeholder="請輸入餐廳介紹" style="height: 150px"></textarea>
     </div>
   </div>
-  <button type=" submit" class="create-restaurant" onclick="check()">建立餐廳</button>
+  <button type=" submit" class="create-restaurant" onclick="return check()">建立餐廳</button>
 </form>
 <script>
   function check() {
     const re = /\s|[　]/g;  //[]裡面是一個全型空白
-    if (document.create.name.value === "" || document.create.name_en.value === "" || document.create.description.value === "" || document.create.location.value === "") {
+    if ((document.create.name.value).trim() === "" || (document.create.name_en.value).trim() === "" || (document.create.description.value).trim() === "" || (document.create.location.value).trim() === "") {
       alert("未輸入");
       return false;
     }
-    if (re.test(document.create.name.value) || re.test(document.create.description.value) || re.test(document.create.location.value)) {
+    if (re.test(document.create.description.value) || re.test(document.create.location.value)) {
       alert("不能含有全型及半型的空白");
       return false;
     }
