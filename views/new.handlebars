@@ -42,13 +42,8 @@
 </form>
 <script>
   function check() {
-    const re = /\s|[　]/g;  //[]裡面是一個全型空白
     if ((document.create.name.value).trim() === "" || (document.create.name_en.value).trim() === "" || (document.create.description.value).trim() === "" || (document.create.location.value).trim() === "") {
       alert("未輸入");
-      return false;
-    }
-    if (re.test(document.create.description.value) || re.test(document.create.location.value)) {
-      alert("不能含有全型及半型的空白");
       return false;
     }
   }

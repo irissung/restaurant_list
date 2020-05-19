@@ -2,7 +2,7 @@
   <a href="/restaurants/{{restaurant._id}}/edit">
     <i class="fas fa-edit"></i>
   </a>
-  <form action="/restaurants/{{ restaurant._id }}/delete" method="POST" style="display: inline;">
+  <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST" style="display: inline;">
     <button class="delete" type="submit" style="background-color: transparent;" onclick="return checkDelete()"><i
         class="fas fa-trash-alt"></i></button>
   </form>

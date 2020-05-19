@@ -12,6 +12,14 @@
           </div>
         </div>
       </form>
+      <form action="/sort" method="GET">
+        <p class="sort-title">排序</p>
+        <select class="sort-bar" name="sort" onchange="this.options[this.options.selectedIndex].value">
+          <option value="name">餐廳名稱</option>
+          <option value="category">餐廳類別</option>
+          <option value="rating">評價</option>
+        </select>
+      </form>
     </div>
   </div>
 </div>
@@ -21,6 +29,11 @@
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
+        <a href="/restaurants/new" class="text-secondary">
+          <div class="card mb-3 create-card">
+            <i class="fas fa-plus"></i>
+          </div>
+        </a>
         {{#each restaurants}}
         <a href="/restaurants/{{this._id}}" class="text-secondary">
           <div class="card mb-3">
@@ -40,7 +53,7 @@
                 <a href="/restaurants/{{this._id}}/edit">
                   <i class="fas fa-edit"></i>
                 </a>
-                <form action="/restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+                <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
                   <button class="delete" type="submit" style="background-color: transparent;"
                     onclick="return checkDelete()">
                     <i class="fas fa-trash-alt"></i>
@@ -57,6 +70,6 @@
 </div>
 <script>
   function checkDelete() {
-    alert("確定要刪掉這筆餐廳資料嗎?")
+    confirm("確定要刪掉這筆餐廳資料嗎?")
   }
 </script>

@@ -31,8 +31,28 @@ header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+.search-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .search-bar .search-bar-inner h4 {
+  width: 300px;
   color: #9b4b4b;
+}
+
+.sort-title {
+  color: #9b4b4b;
+  margin-bottom: 0px;
+  text-align: end;
+}
+
+.sort-bar {
+  width: 100px;
+  height: 30px;
+  color: #888888;
+  font-size: 1rem;
 }
 
 .form-control::placeholder {
@@ -99,6 +119,16 @@ header {
 .create {
   width: 50%;
   margin: 2px auto;
+}
+
+.create-card {
+  display: flex;
+  text-align: center;
+}
+
+.create-card i {
+  margin-top: 50%;
+  font-size: xx-large;
 }
 
 .create-box {
