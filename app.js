@@ -6,18 +6,9 @@ const methodOverride = require('method-override')
 
 //導入body parser
 const bodyParser = require('body-parser')
-//設定mongoose
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
 
-db.on('error', () => {
-  console.log('mongodb error!')
-})
+require('./config/mongoose')
 
-db.once('open', () => {
-  console.log('mongodb connected!')
-})
 //導入餐廳model
 const Restaurant = require('./models/restaurant')
 const routes = require('./routes')
